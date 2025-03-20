@@ -7,7 +7,7 @@ package com.endes.entidad;
  * basado en el total de ventas realizadas. El incremento es del 10% del total de ventas.
  * </p>
  * 
- * @author [Tu Nombre, usa tus iniciales]
+ * @author [PNS]
  * @version 1.0
  * @since 2024-03-19
  */
