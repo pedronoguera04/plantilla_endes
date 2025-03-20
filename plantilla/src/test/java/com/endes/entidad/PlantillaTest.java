@@ -3,9 +3,9 @@ package com.endes.entidad;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 /**
  * Pruebas unitarias para la clase Plantilla.
  */
@@ -21,7 +21,6 @@ class PlantillaTest {
     /**
      * Prueba que verifica que no se puedan contratar empleados con el mismo DNI.
      */
-    @Disabled
     @Test
     @DisplayName("No permite contratar empleados con el mismo DNI")
     void testContratarEmpleado_Duplicado() {

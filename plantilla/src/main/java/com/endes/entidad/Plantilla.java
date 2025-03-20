@@ -21,12 +21,20 @@ public class Plantilla {
      * Agrega un nuevo empleado a la plantilla.
      *
      * @param empleado El empleado a contratar.
-     * @throws IllegalArgumentException Si el empleado es nulo.
+     * @throws IllegalArgumentException Si el empleado es nulo o si el DNI ya existe.
      */
     public void contratarEmpleado(Empleado empleado) {
         if (empleado == null) {
             throw new IllegalArgumentException("No se puede contratar un empleado nulo");
         }
+
+        // Verificar si el empleado ya existe en la lista por DNI
+        for (Empleado e : empleados) {
+            if (e.getDni().equals(empleado.getDni())) {
+                throw new IllegalArgumentException("El empleado con DNI " + empleado.getDni() + " ya está contratado");
+            }
+        }
+
         empleados.add(empleado);
     }
 
@@ -35,7 +43,6 @@ public class Plantilla {
      *
      * @param filtroNombre Nombre o apellido a buscar.
      * @return Lista de empleados que coincidan con el filtro.
-     * @throws RuntimeException Si no se encuentra ningún empleado.
      */
     public List<Empleado> getEmpleadosPorNombre(String filtroNombre) {
         return empleados.stream()
